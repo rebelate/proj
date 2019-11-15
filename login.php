@@ -58,9 +58,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $param_username = $username;
 
             // Attempt to execute the prepared statement
-            if($stmt->execute()){
-                // Store result
-                $stmt->store_result();
+            $stmt->execute();
+            // Store result
+            $stmt->store_result();
 
                 // Check if username exists, if yes then verify password
                 if($stmt->num_rows == 1){
@@ -88,8 +88,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     // Display an error message if username doesn't exist
                     $username_err = "Oops!Akun tidak ditemukan.";
                 }
-            } else{
-                echo $_error;
+            
             }
         }
 
