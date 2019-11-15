@@ -59,7 +59,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
             // Attempt to execute the prepared statement
             $stmt->execute();
-            // Store result
             $stmt->store_result();
 
                 // Check if username exists, if yes then verify password
@@ -98,7 +97,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     // Close connection
     $mysqli->close();
-}
+
 ?>
 
 <!DOCTYPE html>

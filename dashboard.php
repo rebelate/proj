@@ -51,6 +51,7 @@
 		<div id="xce-main">
 			<div class="xce-narrow-content">
 				<h2 class="xce-heading animate-box" data-animate-effect="fadeInLeft">Musics</h2>
+				
 				<div class="row row-bottom-padded-md">
 					<div class="col-md-3 col-sm-6 col-padding text-center animate-box">
 						<a href="#" class="data image-popup" style="background-image: url(images/img-1.jpg);">

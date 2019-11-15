@@ -73,7 +73,7 @@
 
       				// Set parameters
       				$param_username = $username;
-      				$param_password = md5($password);             ]  /*
+      				$param_password = md5($password);           /*] 
                               password_hash($password, PASSWORD_DEFAULT);   ]  Creates a password hash*/
 
       				// Attempt to execute the prepared statement
@@ -97,14 +97,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Register</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <style type="text/css">
-        .wrapper{ width: 350px; padding: 20px; }
+        .wrapper{background: #d9e3ff4a;color: whitesmoke;border-radius: 7px; width: 350px; padding: 20px; max-width: 360px; margin: 100px auto 16px;}
     </style>
 </head>
-<body>
+<body style="background-image:url(images/img_bg_2.jpg);background-size: cover;">
 <div class="wrapper">
 <h2>Sign Up</h2>
       <p>Silahkan mengisi form untuk mendaftar :)</p>
@@ -128,6 +128,5 @@
                               <input type="submit" class="btn btn-primary" value="Submit">
                               
                   </div>
-                  <p>Sudah punya akun? <a href="login.php">Login disini</a>.</p>
       </form>
 </div>
