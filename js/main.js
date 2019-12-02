@@ -58,13 +58,13 @@
             event.preventDefault();
             var $this = $(this);
 
-            if ($('body').hasClass('offcanvas')) 
-            {	
+            if ($('body').hasClass('offcanvas'))
+            {
 
             	$('.nav-toggle').css('transition', '.5s');
                 $('body').removeClass('offcanvas');
-            } 
-            else 
+            }
+            else
             {
                 $('body').addClass('offcanvas');
                 $('aside').css('box-shadow','2px 2px 15px 2px black');
@@ -147,6 +147,7 @@
 
 }());
 var CrossPlayer = (function($) {
+
     var fix = function(id, media, options) {
         this.playFix = false;
         this.init(id, media, options);

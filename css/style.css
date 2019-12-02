@@ -514,7 +514,7 @@ label
 .data .desc span
 {
   display: block;
-  color: #999;
+  color: #201f1f;
   font-size: 12px;
   transition: transform .3s,opacity .3s;
   transform: translate3d(0,15px,0);
@@ -522,7 +522,7 @@ label
 
 .data:hover .desc
 {
-  opacity: 1;
+  opacity: .6;
 }
 
 .data:hover .desc h3

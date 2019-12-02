@@ -10,7 +10,7 @@
 
       // Validate username
       if(empty(trim($_POST["username"]))){
-      		$username_err = "Silahkan Isi username!";
+        $username_err = "Silahkan Isi username!";
       } else{
       		// Prepare a select statement
       		$query = "SELECT id FROM users WHERE username = ?";
@@ -72,7 +72,7 @@
 
       				// Set parameters
       				$param_username = $username;
-      				$param_password = md5($password);           /*] 
+      				$param_password = md5($password);           /*]
                               password_hash($password, PASSWORD_DEFAULT);   ]  Creates a password hash*/
 
       				// Attempt to execute the prepared statement
@@ -91,7 +91,7 @@
       // Close connection
       $mysqli->close();
       }
-      ?>      
+      ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -126,7 +126,7 @@
                   <div class="form-group">
                               <input type="submit" class="btn btn-primary" value="Submit">
 
-                              
+
                   </div>
       </form>
 </div>
