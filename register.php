@@ -5,7 +5,6 @@
       // Define variables and initialize with empty values
       $username = $password = $confirm_password = "";
       $username_err = $password_err = $confirm_password_err = "";
-
       // Processing form data when form is submitted
       if($_SERVER["REQUEST_METHOD"] == "POST"){
 
@@ -14,9 +13,9 @@
       		$username_err = "Silahkan Isi username!";
       } else{
       		// Prepare a select statement
-      		$sql = "SELECT id FROM users WHERE username = ?";
+      		$query = "SELECT id FROM users WHERE username = ?";
 
-      		if($stmt = $mysqli->prepare($sql)){
+      		if($stmt = $mysqli->prepare($query)){
       				// Bind variables to the prepared statement as parameters
       				$stmt->bind_param("s", $param_username);
 
@@ -65,9 +64,9 @@
       if(empty($username_err) && empty($password_err) && empty($confirm_password_err)){
 
       		// Prepare an insert statement
-      		$sql = "INSERT INTO users (username, password) VALUES (?, ?)";
+      		$query = "INSERT INTO users (username, password) VALUES (?, ?)";
 
-      		if($stmt = $mysqli->prepare($sql)){
+      		if($stmt = $mysqli->prepare($query)){
       				// Bind variables to the prepared statement as parameters
       				$stmt->bind_param("ss", $param_username, $param_password);
 
@@ -79,9 +78,9 @@
       				// Attempt to execute the prepared statement
       				if($stmt->execute()){
       						// Redirect to login page
-      						header("location: login.php");
+      						header("location: index.php");
       				} else{
-      						echo $_error;
+      						// echo mysqli_error($mysqli);
       				}
       		}
 
@@ -126,6 +125,7 @@
                   </div>
                   <div class="form-group">
                               <input type="submit" class="btn btn-primary" value="Submit">
+
                               
                   </div>
       </form>
