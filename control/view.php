@@ -4,15 +4,15 @@ if(isset($_POST["param"]))
 {
 
   $output = '';
-  $query = "SELECT * FROM users,login_log WHERE users.username = '".$_POST["param"]."' AND login_log.username = '".$_POST["param"]."' ";
+  $query = "SELECT * FROM users,login_log WHERE users.id_user = '".$_POST["param"]."' AND login_log.id_user = '".$_POST["param"]."' ";
   $result = $mysqli->query($query);
-  if($result->num_rows==0){$output.='User belum melakukan login';}
+  if($result->num_rows==0){$output.='Belum ada data pada user ini ';}
   else{
     $output .= '
     <div class="table-responsive">
     <table class="table table-bordered">';
-    while($row = $result->fetch_object())
-    {
+    $row = $result->fetch_object();
+
       $output .= '
       <tr>
       <td width="30%"><label>Username</label></td>
@@ -27,7 +27,7 @@ if(isset($_POST["param"]))
       <td width="70%">'.$row->last_login.'</td>
       </tr>
       ';
-    }
+
     $output .= '
     </table>
     </div>

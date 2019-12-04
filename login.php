@@ -36,7 +36,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   // Validate
   if(empty($username_err) && empty($password_err)){
     // Prepare a statement
-    $query = "SELECT id, username, password FROM users WHERE username = ?";
+    $query = "SELECT id_user, username, password FROM users WHERE username = ?";
     if($stmt = $mysqli->prepare($query)){
       // Bind for prepare
       $stmt->bind_param("s", $param_username);
@@ -55,7 +55,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
           if(md5($password)==$hashed_password){
 
             session_start();
-            $query = "INSERT INTO login_log (username, last_login) values ('$username' ,'$stamp') ON DUPLICATE KEY UPDATE username='$username', last_login='$stamp'";
+            $query = "INSERT INTO login_log (id_user, last_login) values ('$id' ,'$stamp') ON DUPLICATE KEY UPDATE id_user='$id', last_login='$stamp'";
             $mysqli->query($query) or die(mysqli_error($mysqli));
             // Store data pada session
             $_SESSION["loggedin"] = true;

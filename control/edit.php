@@ -9,7 +9,7 @@ if(!empty($_POST))
   $isadmin=$_POST['isadmin'];
   if($_POST['param'] != '')
   {
-    $query = "UPDATE users SET username='$username', isadmin = '$isadmin' WHERE username = '".$_POST['param']."'";
+    $query = "UPDATE users SET username='$username', isadmin = '$isadmin' WHERE id_user = '".$_POST['param']."'";
     $message = 'User Updated!'; // executed in line 16
   }
   if($mysqli->query($query))
@@ -30,8 +30,8 @@ if(!empty($_POST))
       $output .= '
       <tr>
       <td>' . $row[1] . '</td>
-      <td><input type="button" name="edit" value="Edit" id="'.$row[1] .'" class="btn btn-info btn-xs edit_data" /></td>
-      <td><input type="button" name="view" value="view" id="' . $row[1] . '" class="btn btn-info btn-xs view_data" /></td>
+      <td><input type="button" name="edit" value="Edit" id="'.$row[0] .'" class="btn btn-info btn-xs edit_data" /></td>
+      <td><input type="button" name="view" value="view" id="' . $row[0] . '" class="btn btn-info btn-xs view_data" /></td>
       </tr>
       ';
     }

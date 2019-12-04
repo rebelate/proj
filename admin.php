@@ -60,10 +60,10 @@
                       <?= $row[1]; ?>
                     </td>
                     <td>
-                      <input type="button" name="edit" value="Edit" id="<?= $row[1]; ?>" class="btn btn-info edit_data" />
+                      <input type="button" name="edit" value="Edit" id="<?= $row[0]; ?>" class="btn btn-info edit_data" />
                     </td>
                     <td>
-                      <input type="button" name="view" value="view" id="<?= $row[1]; ?>" class="btn btn-info btn-xs view_data" />
+                      <input type="button" name="view" value="view" id="<?= $row[0]; ?>" class="btn btn-info btn-xs view_data" />
                     </td>
                   </tr>
                 <?php } ?>
@@ -108,6 +108,7 @@
       <!--<button type="button" class="close" data-dismiss="modal">&times;</button> -->
       <!-- </div> -->
       <div class="modal-body">
+
         <form method="post" id="edit">
           <label>Username</label>
           <input type="text" name="username" id="username" class="form-control" />
@@ -141,7 +142,7 @@ $(document).ready(function(){
       success:function(data){
         $('#username').val(data.username);
         $('#isadmin').val(data.isadmin);
-        $('#param').val(data.username); //edit param defined here
+        $('#param').val(data.id_user); //edit param defined here
         $('#edit_Modal').modal('show');
       }
     });
