@@ -10,7 +10,7 @@ if(!empty($_POST))
   if($_POST['param'] != '')
   {
     $query = "UPDATE users SET username='$username', isadmin = '$isadmin' WHERE id_user = '".$_POST['param']."'";
-    $message = 'User Updated!'; // executed in line 16
+    $message = 'User Updated!'; // executed in line 17
   }
   if($mysqli->query($query))
   {
@@ -18,11 +18,10 @@ if(!empty($_POST))
     $sel_query = "SELECT * FROM users ";
     $result = $mysqli->query($sel_query);
     $output .= '
-    <table class="table table-bordered">
+    <table class="table table-bordered" style="">
     <tr>
-    <th width="70%">Employee Name</th>
-    <th width="15%">Edit</th>
-    <th width="15%">View</th>
+    <th width="100%">Name</th>
+    <th width="0%" colspan="2"><center>ACTION</center></th>
     </tr>
     ';
     while($row = $result->fetch_array())

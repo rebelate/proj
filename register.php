@@ -13,7 +13,7 @@
         $username_err = "Silahkan Isi username!";
       } else{
       		// Prepare a select statement
-      		$query = "SELECT id FROM users WHERE username = ?";
+      		$query = "SELECT id_user FROM users WHERE username = ?";
 
       		if($stmt = $mysqli->prepare($query)){
       				// Bind variables to the prepared statement as parameters
