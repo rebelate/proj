@@ -45,17 +45,17 @@
             $image= 'data:image/jpeg;base64,'.base64_encode( $r->cover ).'';
             ?>
             <form method="post" id="music">
-            <div class="rect text-center animate-box">
-              <a href="#" class="data image-popup music" style="background-image: url(<?= $image ?>)" onclick="$('#music').submit();" >
-                <input type="hidden" id="title" value="<?= $r->title ?>">
-                <input type="hidden" id="data" value="<?= $r->data ?>">
-                <div class="desc">
-                  <h3><?= $r->title ?></h3>
-                  <span><?= $r->author ?></span>
-                </div>
-              </a>
-            </div>
-          </form>
+              <div class="rect text-center animate-box">
+                <a href="#!" class="data image-popup music" style="background-image: url(<?= $image ?>)" onclick="$('#music').submit();" >
+                  <input type="hidden" id="title" value="<?= $r->title ?>">
+                  <input type="hidden" id="data" value="<?= $r->data ?>">
+                  <div class="desc">
+                    <h3><?= $r->title ?></h3>
+                    <span><?= $r->author ?></span>
+                  </div>
+                </a>
+              </div>
+            </form>
           <?php } ?>
 
         </div>
@@ -106,8 +106,8 @@
   <script type="text/javascript">
   $(document).ready(function() {
 
-      $('#jp_container_1').css({'display':'none'});
-      $('#jp_container_1').addClass('fadeInUp');
+    $('#jp_container_1').css({'display':'none'});
+    $('#jp_container_1').addClass('fadeInUp');
 
     $('#music').on("submit", function(e){
       // $(document).on('click', '.music', function(e){
@@ -133,9 +133,9 @@
       };
       new CrossPlayer("#jquery_jplayer_1", media, options);
       setTimeout(function() {
-      $("#jquery_jplayer_1").jPlayer("play");
-    }, 100);
-/*------------------------------------------------*/
+        $("#jquery_jplayer_1").jPlayer("play");
+      }, 100);
+      /*------------------------------------------------*/
     });
   });
 
